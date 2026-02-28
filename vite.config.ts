@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   // Add base configuration for GitHub Pages
-  base: '/Mahmoud_Portfolio/', // This tells Vite to use /M_Portfolio/ as the base path
+  base: '/Mahmoud_Portfolio/',
+   // This tells Vite to use /M_Portfolio/ as the base path
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
