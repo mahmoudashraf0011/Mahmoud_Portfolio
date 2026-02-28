@@ -13,11 +13,20 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  
+  // Set dark mode as default
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
+      const saved = localStorage.getItem("theme");
+      if (saved !== null) {
+        return saved === "dark";
+      }
+      // Default to dark mode
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      return true;
     }
-    return false;
+    return true; // Default to dark
   });
 
   useEffect(() => {
@@ -27,9 +36,11 @@ const Navbar = () => {
   }, []);
 
   const toggleDark = () => {
-    setDark((d) => {
-      document.documentElement.classList.toggle("dark", !d);
-      return !d;
+    setDark((prev) => {
+      const newDark = !prev;
+      document.documentElement.classList.toggle("dark", newDark);
+      localStorage.setItem("theme", newDark ? "dark" : "light");
+      return newDark;
     });
   };
 
@@ -46,21 +57,22 @@ const Navbar = () => {
           M<span className="text-accent">.</span>A
         </a>
 
-        {/* Desktop */}
+        {/* Desktop Menu */}
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((l) => (
-            <li key={l.href}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
               <a
-                href={l.href}
+                href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
-                {l.label}
+                {link.label}
               </a>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
+          {/* Theme Toggle */}
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
@@ -68,6 +80,8 @@ const Navbar = () => {
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-xl p-2 text-muted-foreground md:hidden hover:bg-secondary"
@@ -88,14 +102,14 @@ const Navbar = () => {
             className="overflow-hidden border-b border-border bg-background/95 backdrop-blur-xl md:hidden"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
-              {navLinks.map((l) => (
-                <li key={l.href}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
                   <a
-                    href={l.href}
+                    href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className="block rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                   >
-                    {l.label}
+                    {link.label}
                   </a>
                 </li>
               ))}
