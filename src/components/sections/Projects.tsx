@@ -924,7 +924,7 @@ const ProjectCard = ({
                 <ExternalLink size={14} /> Live
               </a>
             )}
-            {project.githubUrl !== "#" && (
+            {/* {project.githubUrl !== "#" && (
               <a
                 href={project.githubUrl}
                 onClick={(e) => e.stopPropagation()}
@@ -934,7 +934,7 @@ const ProjectCard = ({
               >
                 <Github size={14} /> Code
               </a>
-            )}
+            )} */}
           </div>
         </div>
       </div>
