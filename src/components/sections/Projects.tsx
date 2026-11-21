@@ -150,6 +150,7 @@ interface Project {
   githubUrl: string;
   screenshots: string[];
   thumbnail?: string;
+  thumbnailMode?: "logo" | "mockup";
   videoDemo?: string;
   hasVideo?: boolean;
 }
@@ -172,17 +173,20 @@ const projects: Project[] = [
     liveUrl: "https://app.upklick.net/",
     githubUrl: "s",
     thumbnail: upklick,
+    thumbnailMode: "logo",
     screenshots: [upklick1, upklick2, upklick3],
     hasVideo: false,
   },
   {
     id: 2,
     title: "Joe Academy",
-    description: "s",
+    description:
+      "Joe Partner: Hands-on brand and business building—teaching you how to create logos, pick brand colors, craft marketing strategies, and launch with confidence.",
     tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase", "AI"],
     liveUrl: "https://academy.mohamedjoe.com/",
     githubUrl: "s",
     thumbnail: academy,
+    thumbnailMode: "logo",
     screenshots: [academy1, academy2, academy3, academy4],
     hasVideo: false,
   },
@@ -195,6 +199,7 @@ const projects: Project[] = [
     liveUrl: "https://www.zatonx.com/",
     githubUrl: "s",
     thumbnail: zatonx,
+    thumbnailMode: "logo",
     screenshots: [zatonx1, zatonx2, zatonx3],
     hasVideo: false,
   },
@@ -207,6 +212,7 @@ const projects: Project[] = [
     liveUrl: "https://digital-product-3a97c.web.app/",
     githubUrl: "s",
     thumbnail: aiBusseiness,
+    thumbnailMode: "logo",
     screenshots: [aiBussiness1, aiBussiness2, aiBussiness3],
     hasVideo: false,
   },
@@ -214,11 +220,12 @@ const projects: Project[] = [
     id: 5,
     title: "Joe Partner",
     description:
-      "Joe Academy is an all-in-one business management system designed to streamline team workflows, track individual sales performance, and automate appointment scheduling—connecting managers and employees in one smart workspace.",
+      "Joe Partner is an all-in-one business management system designed to streamline team workflows, track individual sales performance, and automate appointment scheduling—connecting managers and employees in one smart workspace.",
     tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase"],
     liveUrl: "https://partner-os-e1f2e.web.app/dashboard",
     githubUrl: "https://partner-os-e1f2e.web.app/dashboard",
     thumbnail: partner,
+    thumbnailMode: "logo",
     screenshots: [partner1, partner2, partner3],
     hasVideo: false,
   },
@@ -231,6 +238,7 @@ const projects: Project[] = [
     liveUrl: "https://thati-sa.com/",
     githubUrl: "s",
     thumbnail: thati,
+    thumbnailMode: "logo",
     screenshots: [thati1, thati2, thati3],
     hasVideo: false,
   },
@@ -243,6 +251,7 @@ const projects: Project[] = [
     liveUrl: "https://www.goline-transport.com/",
     githubUrl: "s",
     thumbnail: goline,
+    thumbnailMode: "logo",
     screenshots: [goline1, goline2, goline3],
     hasVideo: false,
   },
@@ -255,6 +264,7 @@ const projects: Project[] = [
     liveUrl: "https://ig-os-24c6b.web.app/",
     githubUrl: "s",
     thumbnail: insta,
+    thumbnailMode: "logo",
     screenshots: [insta1, insta2, insta3],
     hasVideo: false,
   },
@@ -267,6 +277,7 @@ const projects: Project[] = [
     liveUrl: "https://stackyard-f7abc.web.app/",
     githubUrl: "s",
     thumbnail: stack,
+    thumbnailMode: "logo",
     screenshots: [stack1, stack2, stack3],
     hasVideo: false,
   },
@@ -279,6 +290,7 @@ const projects: Project[] = [
     liveUrl: "https://msghotels-resorts.com",
     githubUrl: "https://github.com/mahmoudashraf0011/MSG_Hotels",
     thumbnail: msg,
+    thumbnailMode: "mockup",
     screenshots: [msg1, msg2, msg3],
     hasVideo: false,
   },
@@ -299,6 +311,7 @@ const projects: Project[] = [
     liveUrl: "https://lomatechcms.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/lomatech_dashboard",
     thumbnail: lomatech,
+    thumbnailMode: "mockup",
     screenshots: [lomatech1, lomatech2, lomatech3, lomatech4],
     videoDemo:
       "https://drive.google.com/file/d/1z-U0Pnit5De5cBl_WqS9eoZdHwuRtY6C/preview",
@@ -320,6 +333,7 @@ const projects: Project[] = [
     liveUrl: "https://freightexegdesigns.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/FreighteX",
     thumbnail: fr,
+    thumbnailMode: "mockup",
     screenshots: [fr1, fr2, fr3],
     hasVideo: false,
   },
@@ -339,6 +353,7 @@ const projects: Project[] = [
     liveUrl: "https://shelfymerchant.msol.dev/",
     githubUrl: "https://github.com/mahmoudashraf0011/shefly_merchant",
     thumbnail: shelfy,
+    thumbnailMode: "mockup",
     screenshots: [shelfy1, shelfy2, shelfy3, shelfy4, shelfy5],
     videoDemo:
       "https://drive.google.com/file/d/1d2nHanDRZ2-dGR9jbTPmm-7aI78JU9E1/preview",
@@ -353,6 +368,7 @@ const projects: Project[] = [
     liveUrl: "https://staging.golden-eagle.co.uk/shortge/public/home",
     githubUrl: "https://github.com/mahmoudashraf0011/golden-eagle",
     thumbnail: ge,
+    thumbnailMode: "mockup",
     screenshots: [ge1, ge2, ge3],
     hasVideo: false,
   },
@@ -365,6 +381,7 @@ const projects: Project[] = [
     liveUrl: "https://aolcportal.msol.dev/",
     githubUrl: "https://github.com/mahmoudashraf0011/AOLC",
     thumbnail: aolc,
+    thumbnailMode: "mockup",
     screenshots: [aolc1, aolc2, aolc3],
     videoDemo:
       "https://drive.google.com/file/d/1MagnGwbBo_ktx5cXaDjsunI1G513OhcN/preview",
@@ -379,6 +396,7 @@ const projects: Project[] = [
     liveUrl: "https://smart-finance.aiawareworld.me/",
     githubUrl: "https://github.com/mahmoudashraf0011/smart_finance",
     thumbnail: smart,
+    thumbnailMode: "mockup",
     screenshots: [smart1, smart2, smart3],
     videoDemo:
       "https://drive.google.com/file/d/1k1oek9tMp6YnwveGS2XlckX3Fqxf4OXj/preview",
@@ -393,6 +411,7 @@ const projects: Project[] = [
     liveUrl: "https://caltacms.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/calta-content-craft",
     thumbnail: caltacms,
+    thumbnailMode: "mockup",
     screenshots: [caltaCms1, caltaCms2, caltaCms3],
     videoDemo:
       "https://drive.google.com/file/d/1e7zEIBonyXV1f5zTNG-2tvOzFGaTKI_8/preview",
@@ -407,6 +426,7 @@ const projects: Project[] = [
     liveUrl: "https://www.popeshenouda.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/papashenoda",
     thumbnail: pop,
+    thumbnailMode: "mockup",
     screenshots: [pop1, pop2, pop3],
   },
   {
@@ -418,6 +438,7 @@ const projects: Project[] = [
     liveUrl: "https://www.thecaltagroup.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/Calta",
     thumbnail: calta,
+    thumbnailMode: "mockup",
     screenshots: [calta1, calta2, calta3],
   },
   {
@@ -429,6 +450,7 @@ const projects: Project[] = [
     liveUrl: "https://stmichealcms.msol.work/dashboard",
     githubUrl: "https://github.com/mahmoudashraf0011/ST.Micheal",
     thumbnail: sant,
+    thumbnailMode: "logo",
     screenshots: [sant1, sant2, sant3],
     videoDemo:
       "https://drive.google.com/file/d/1AcTRrVodz8SuD2tdWO128ZCaSgQcthRD/preview",
@@ -443,6 +465,7 @@ const projects: Project[] = [
     liveUrl: "https://shopshortlisted.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/Shortlisted",
     thumbnail: short,
+    thumbnailMode: "mockup",
     screenshots: [short1, short2, short3],
   },
   {
@@ -454,6 +477,7 @@ const projects: Project[] = [
     liveUrl: "https://megamind22.github.io/Portfolio/",
     githubUrl: "https://github.com/mahmoudashraf0011/mohamed-shaker-ai-craft",
     thumbnail: shaker,
+    thumbnailMode: "logo",
     screenshots: [shaker1],
   },
   {
@@ -465,6 +489,7 @@ const projects: Project[] = [
     liveUrl: "https://tamer.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/tamer-ishak-showcase",
     thumbnail: tamer,
+    thumbnailMode: "logo",
     screenshots: [tamer1],
   },
   {
@@ -476,6 +501,7 @@ const projects: Project[] = [
     liveUrl: "https://mahmoudashraf0011.github.io/Scrate/",
     githubUrl: "https://github.com/mahmoudashraf0011/Scrate",
     thumbnail: scrate,
+    thumbnailMode: "mockup",
     screenshots: [scrate1, scrate2, scrate3],
   },
   {
@@ -487,6 +513,7 @@ const projects: Project[] = [
     liveUrl: "https://mahmoudashraf0011.github.io/MegaCart-Template/",
     githubUrl: "https://github.com/mahmoudashraf0011/MegaCart-Template",
     thumbnail: mega,
+    thumbnailMode: "mockup",
     screenshots: [mega1, mega2, mega3],
   },
   {
@@ -499,6 +526,7 @@ const projects: Project[] = [
     githubUrl:
       "https://github.com/mahmoudashraf0011/Rocker-Template?tab=readme-ov-file",
     thumbnail: rocker,
+    thumbnailMode: "mockup",
     screenshots: [rocker1, rocker2, rocker3],
   },
   {
@@ -517,6 +545,7 @@ const projects: Project[] = [
     liveUrl: "https://mahmoudashraf0011.github.io/RWD/",
     githubUrl: "https://github.com/mahmoudashraf0011/RWD",
     thumbnail: rwd,
+    thumbnailMode: "logo",
     screenshots: [rwd1, rwd2, rwd3],
   },
   {
@@ -528,6 +557,7 @@ const projects: Project[] = [
     liveUrl: "https://mahmoudashraf0011.github.io/Pro-Template/",
     githubUrl: "https://github.com/mahmoudashraf0011/Pro-Template",
     thumbnail: pro,
+    thumbnailMode: "logo",
     screenshots: [pro1, pro2, pro3],
   },
 ];
@@ -1005,20 +1035,31 @@ const ProjectCard = ({
     >
       {/* Screenshot Preview */}
       <div
-        className="relative h-48 flex-shrink-0 cursor-pointer overflow-hidden bg-secondary/60"
+        className={`relative h-48 flex-shrink-0 cursor-pointer overflow-hidden ${
+          project.thumbnailMode === "logo"
+            ? "flex items-center justify-center border border-white/5 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800/80 p-8"
+            : "bg-secondary/60"
+        }`}
         onClick={onScreenshotsClick}
       >
+        {project.thumbnailMode === "logo" && (
+          <div className="absolute left-1/2 top-1/2 h-32 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-3xl" />
+        )}
         <img
           src={project.thumbnail || project.screenshots[0]}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={
+            project.thumbnailMode === "logo"
+              ? "relative h-auto w-auto max-h-24 max-w-[65%] object-contain transition-transform duration-300 group-hover:scale-105"
+              : "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          }
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Badges container */}
         <div className="absolute top-3 right-3 flex gap-2">
           {/* Screenshot count badge */}
-          <div className="bg-black/60 backdrop-blur-sm text-white/90 text-xs px-2 py-1 rounded-full border border-white/10">
+          <div className="border border-white/10 bg-black/50 px-2 py-1 text-xs text-white/90 rounded-full backdrop-blur-md">
             {project.screenshots.length}{" "}
             {project.screenshots.length === 1 ? "photo" : "photos"}
           </div>
