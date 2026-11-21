@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ExternalLink, 
-  Github, 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  Image as ImageIcon, 
+import {
+  ExternalLink,
+  Github,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Image as ImageIcon,
   Maximize2,
   ChevronDown,
   ChevronUp,
@@ -22,12 +22,12 @@ import {
   Volume2,
   VolumeX,
   FileText,
-  Maximize
+  Maximize,
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 // Import all project images (keep your existing imports)
-import caltacms  from "../../assets/projects/calta_cms.png";
+import caltacms from "../../assets/projects/calta_cms.png";
 import calta from "../../assets/projects/caltaGroup.avif";
 import fr from "../../assets/projects/frieghtex.avif";
 import ge from "../../assets/projects/golden.avif";
@@ -46,6 +46,15 @@ import short from "../../assets/projects/shortListed.avif";
 import smart from "../../assets/projects/smart.avif";
 import sant from "../../assets/projects/st_micheal.jpeg";
 import aolc from "../../assets/projects/aolc.png";
+import upklick from "../../assets/projects/new/upclick-mark.svg";
+import academy from "../../assets/projects/new/joe-academy-login-logo-C7yfiGZE.png";
+import zatonx from "../../assets/projects/new/zatonx.png";
+import aiBusseiness from "../../assets/projects/new/ai_business.svg";
+import partner from "../../assets/projects/new/JP.png";
+import thati from "../../assets/projects/new/thati-logo.svg";
+import goline from "../../assets/projects/new/goline.png";
+import stack from "../../assets/projects/new/stack.svg";
+import insta from "../../assets/projects/new/instagram.svg";
 
 // Import all screenshot images (keep your existing imports)
 import caltaCms1 from "../../assets/projects/screens/calta_cms1.png";
@@ -104,7 +113,34 @@ import sant3 from "../../assets/projects/screens/sant3.png";
 import aolc1 from "../../assets/projects/screens/aolc1.png";
 import aolc2 from "../../assets/projects/screens/aolc2.png";
 import aolc3 from "../../assets/projects/screens/aolc3.png";
-
+import upklick1 from "../../assets/projects/screens/new/upclick1.png";
+import upklick2 from "../../assets/projects/screens/new/upclick2.png";
+import upklick3 from "../../assets/projects/screens/new/upclick3.png";
+import academy1 from "../../assets/projects/screens/new/academy1.png";
+import academy2 from "../../assets/projects/screens/new/academy2.png";
+import academy3 from "../../assets/projects/screens/new/academy3.png";
+import academy4 from "../../assets/projects/screens/new/academy4.png";
+import zatonx1 from "../../assets/projects/screens/new/zatonx1.png";
+import zatonx2 from "../../assets/projects/screens/new/zatonx2.png";
+import zatonx3 from "../../assets/projects/screens/new/zatonx3.png";
+import aiBussiness1 from "../../assets/projects/screens/new/ai1.png";
+import aiBussiness2 from "../../assets/projects/screens/new/ai2.png";
+import aiBussiness3 from "../../assets/projects/screens/new/ai3.png";
+import partner1 from "../../assets/projects/screens/new/partner1.png";
+import partner2 from "../../assets/projects/screens/new/partner2.png";
+import partner3 from "../../assets/projects/screens/new/partner3.png";
+import thati1 from "../../assets/projects/screens/new/thati1.png";
+import thati2 from "../../assets/projects/screens/new/thati2.png";
+import thati3 from "../../assets/projects/screens/new/thati3.png";
+import goline1 from "../../assets/projects/screens/new/goline1.png";
+import goline2 from "../../assets/projects/screens/new/goline2.png";
+import goline3 from "../../assets/projects/screens/new/goline3.jfif";
+import insta1 from "../../assets/projects/screens/new/insta1.jfif";
+import insta2 from "../../assets/projects/screens/new/insta2.png";
+import insta3 from "../../assets/projects/screens/new/insta3.png";
+import stack1 from "../../assets/projects/screens/new/stack1.png";
+import stack2 from "../../assets/projects/screens/new/stack2.png";
+import stack3 from "../../assets/projects/screens/new/stack3.png";
 interface Project {
   id: number;
   title: string;
@@ -121,230 +157,402 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "Upklick",
+    description:
+      "Upklick is an all-in-one white-label SaaS platform that enables agencies, consultants, and businesses to launch, manage, and monetize their own branded software ecosystem without building from scratch.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Tailwind CSS",
+      "Firebase",
+      "Social media Configuration",
+      "Ai Agent",
+    ],
+    liveUrl: "https://app.upklick.net/",
+    githubUrl: "s",
+    thumbnail: upklick,
+    screenshots: [upklick1, upklick2, upklick3],
+    hasVideo: false,
+  },
+  {
+    id: 2,
+    title: "Joe Academy",
+    description: "s",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase", "AI"],
+    liveUrl: "https://academy.mohamedjoe.com/",
+    githubUrl: "s",
+    thumbnail: academy,
+    screenshots: [academy1, academy2, academy3, academy4],
+    hasVideo: false,
+  },
+  {
+    id: 3,
+    title: "Zatonx",
+    description:
+      "ZatonX is more than an E-learning platform. It is an intelligent ecosystem designed to bridge the gap between academic theory and industry reality through AI-driven personalization and bilingual accessibility.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Supabase", "AI"],
+    liveUrl: "https://www.zatonx.com/",
+    githubUrl: "s",
+    thumbnail: zatonx,
+    screenshots: [zatonx1, zatonx2, zatonx3],
+    hasVideo: false,
+  },
+  {
+    id: 4,
+    title: "AI Business",
+    description:
+      "More than just AI tools—it's a smart, integrated system of virtual strategists and marketers that builds and grows your brand from scratch.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase", "AI"],
+    liveUrl: "https://digital-product-3a97c.web.app/",
+    githubUrl: "s",
+    thumbnail: aiBusseiness,
+    screenshots: [aiBussiness1, aiBussiness2, aiBussiness3],
+    hasVideo: false,
+  },
+  {
+    id: 5,
+    title: "Joe Partner",
+    description:
+      "Joe Academy is an all-in-one business management system designed to streamline team workflows, track individual sales performance, and automate appointment scheduling—connecting managers and employees in one smart workspace.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase"],
+    liveUrl: "https://partner-os-e1f2e.web.app/dashboard",
+    githubUrl: "https://partner-os-e1f2e.web.app/dashboard",
+    thumbnail: partner,
+    screenshots: [partner1, partner2, partner3],
+    hasVideo: false,
+  },
+  {
+    id: 6,
+    title: "Thati",
+    description:
+      "Thati Studio: A Riyadh-based digital agency crafting visual identities, building Salla e-commerce stores, and empowering brands across the GCC to scale independently.",
+    tags: ["Salla", "HtML5", "CSS3", "JavaScript"],
+    liveUrl: "https://thati-sa.com/",
+    githubUrl: "s",
+    thumbnail: thati,
+    screenshots: [thati1, thati2, thati3],
+    hasVideo: false,
+  },
+  {
+    id: 7,
+    title: "GOLine",
+    description:
+      "GoLine Transport: A smart university bus network offering seamless route management, real-time trip tracking, and reliable daily commutes for students",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Supabase"],
+    liveUrl: "https://www.goline-transport.com/",
+    githubUrl: "s",
+    thumbnail: goline,
+    screenshots: [goline1, goline2, goline3],
+    hasVideo: false,
+  },
+  {
+    id: 8,
+    title: "IG OS",
+    description:
+      "IG OS: An AI-driven Instagram business manager for smart content scheduling, multi-format publishing, AI video generation, and real-time growth analytics.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase", "AI"],
+    liveUrl: "https://ig-os-24c6b.web.app/",
+    githubUrl: "s",
+    thumbnail: insta,
+    screenshots: [insta1, insta2, insta3],
+    hasVideo: false,
+  },
+  {
+    id: 9,
+    title: "Stackyard",
+    description:
+      "StackYard is an end-to-end software project management platform built to streamline development workflows. It serves as a centralized hub for managing software lifecycles, tracking issues and feature suggestions, and facilitating seamless team communication—empowering engineering teams to ship better products faster.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS", "Firebase"],
+    liveUrl: "https://stackyard-f7abc.web.app/",
+    githubUrl: "s",
+    thumbnail: stack,
+    screenshots: [stack1, stack2, stack3],
+    hasVideo: false,
+  },
+  {
+    id: 10,
     title: "MSG Hotels & Resorts",
-    description: "MSG Hotels & Resorts is a hospitality website designed to showcase and manage a group of hotels and resorts. It enables users to explore properties, view amenities, and complete reservations while supporting hotel administration through clear content structure, booking flows, and a refined digital experience focused on comfort, trust, and service excellence.",
-    tags: [ "React", "TypeScript", "Redux", "Tailwind CSS"],
+    description:
+      "MSG Hotels & Resorts is a hospitality website designed to showcase and manage a group of hotels and resorts. It enables users to explore properties, view amenities, and complete reservations while supporting hotel administration through clear content structure, booking flows, and a refined digital experience focused on comfort, trust, and service excellence.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind CSS"],
     liveUrl: "https://msghotels-resorts.com",
     githubUrl: "https://github.com/mahmoudashraf0011/MSG_Hotels",
     thumbnail: msg,
     screenshots: [msg1, msg2, msg3],
-    hasVideo: false
+    hasVideo: false,
   },
   {
-    id: 2,
+    id: 11,
     title: "Lomatech Dashboard",
-    description: "LomaTech is a logistics management platform designed to simplify and optimize delivery operations by providing real-time shipment tracking, live driver monitoring, smart route optimization, and automated geofencing alerts. It enhances visibility, coordination, and decision-making across logistics teams, helping organizations operate more efficiently and respond quickly to dynamic delivery conditions.",
-    tags: ["React", "TypeScript", "Redux", "Material-UI", "Recharts", "WebSocket","Google Maps API"],
+    description:
+      "LomaTech is a logistics management platform designed to simplify and optimize delivery operations by providing real-time shipment tracking, live driver monitoring, smart route optimization, and automated geofencing alerts. It enhances visibility, coordination, and decision-making across logistics teams, helping organizations operate more efficiently and respond quickly to dynamic delivery conditions.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Material-UI",
+      "Recharts",
+      "WebSocket",
+      "Google Maps API",
+    ],
     liveUrl: "https://lomatechcms.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/lomatech_dashboard",
     thumbnail: lomatech,
     screenshots: [lomatech1, lomatech2, lomatech3, lomatech4],
-    videoDemo: "https://drive.google.com/file/d/1z-U0Pnit5De5cBl_WqS9eoZdHwuRtY6C/preview",
-    hasVideo: true
+    videoDemo:
+      "https://drive.google.com/file/d/1z-U0Pnit5De5cBl_WqS9eoZdHwuRtY6C/preview",
+    hasVideo: true,
   },
   {
-    id: 3,
+    id: 12,
     title: "FrieghteX",
-    description: "FreightX was designed to simplify maritime freight management by providing a clear and reliable digital experience for international shipping. The platform enables users to book cargo shipments, track their movement across countries, and access shipment details from origin to destination. The primary goal was to improve visibility, reduce uncertainty, and support informed decision-making throughout the shipping journey. By centralizing logistics data and shipment updates, FreightX helps users manage global freight operations efficiently while maintaining trust and transparency in complex supply chains.",
-    tags: ["React", "TypeScript", "Redux", "Tailwind CSS","Framer Motion", "Google Maps API"],
+    description:
+      "FreightX was designed to simplify maritime freight management by providing a clear and reliable digital experience for international shipping. The platform enables users to book cargo shipments, track their movement across countries, and access shipment details from origin to destination. The primary goal was to improve visibility, reduce uncertainty, and support informed decision-making throughout the shipping journey. By centralizing logistics data and shipment updates, FreightX helps users manage global freight operations efficiently while maintaining trust and transparency in complex supply chains.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Google Maps API",
+    ],
     liveUrl: "https://freightexegdesigns.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/FreighteX",
     thumbnail: fr,
     screenshots: [fr1, fr2, fr3],
-    hasVideo: false
+    hasVideo: false,
   },
   {
-    id: 4,
+    id: 13,
     title: "Shelfy",
-    description: "Shelfy was designed to simplify how users manage and track physical products by combining image-based scanning with automated inventory management. The application allows users to photograph items, automatically record product details, and monitor expiration dates without manual input. The project focuses on reducing friction in inventory tracking, minimizing waste caused by forgotten products, and helping users stay organized. By transforming a traditionally tedious task into a quick, intuitive action, Shelfy supports better planning, smarter consumption, and more efficient product management through a clean and accessible mobile experience.",
-    tags: ["React", "Redux", "TypeScript", "Tailwind CSS", "Recharts.js","Google Maps API"],
+    description:
+      "Shelfy was designed to simplify how users manage and track physical products by combining image-based scanning with automated inventory management. The application allows users to photograph items, automatically record product details, and monitor expiration dates without manual input. The project focuses on reducing friction in inventory tracking, minimizing waste caused by forgotten products, and helping users stay organized. By transforming a traditionally tedious task into a quick, intuitive action, Shelfy supports better planning, smarter consumption, and more efficient product management through a clean and accessible mobile experience.",
+    tags: [
+      "React",
+      "Redux",
+      "TypeScript",
+      "Tailwind CSS",
+      "Recharts.js",
+      "Google Maps API",
+    ],
     liveUrl: "https://shelfymerchant.msol.dev/",
     githubUrl: "https://github.com/mahmoudashraf0011/shefly_merchant",
     thumbnail: shelfy,
     screenshots: [shelfy1, shelfy2, shelfy3, shelfy4, shelfy5],
-    videoDemo: "https://drive.google.com/file/d/1d2nHanDRZ2-dGR9jbTPmm-7aI78JU9E1/preview",
-    hasVideo: true
+    videoDemo:
+      "https://drive.google.com/file/d/1d2nHanDRZ2-dGR9jbTPmm-7aI78JU9E1/preview",
+    hasVideo: true,
   },
   {
-    id: 5,
+    id: 14,
     title: "Golden Eagle",
-    description: "Golden Eagle London is a property rental platform designed to simplify the process of discovering shortlet and longlet units. It provides users with complete property details, including amenities, pricing, location, and availability, helping them compare options easily and make confident rental decisions while streamlining inquiries and overall browsing efficiency.",
-    tags: ["HTML", "CSS", "JavaScript","Bootstrap"],
+    description:
+      "Golden Eagle London is a property rental platform designed to simplify the process of discovering shortlet and longlet units. It provides users with complete property details, including amenities, pricing, location, and availability, helping them compare options easily and make confident rental decisions while streamlining inquiries and overall browsing efficiency.",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     liveUrl: "https://staging.golden-eagle.co.uk/shortge/public/home",
     githubUrl: "https://github.com/mahmoudashraf0011/golden-eagle",
     thumbnail: ge,
     screenshots: [ge1, ge2, ge3],
-    hasVideo: false
+    hasVideo: false,
   },
   {
-    id: 6,
+    id: 15,
     title: "Aolc (Alpha Omega Events)",
-    description: "Alpha Omega is a digital platform designed for Alpha Omega Church to organize and showcase church events. It helps members discover upcoming activities, view event details, schedules, and locations, and stay connected with church life through a simple, accessible, and well-structured digital experience that supports community engagement and participation easily.",
+    description:
+      "Alpha Omega is a digital platform designed for Alpha Omega Church to organize and showcase church events. It helps members discover upcoming activities, view event details, schedules, and locations, and stay connected with church life through a simple, accessible, and well-structured digital experience that supports community engagement and participation easily.",
     tags: ["React", "TypeScript", "Redux", "Tailwind CSS"],
     liveUrl: "https://aolcportal.msol.dev/",
     githubUrl: "https://github.com/mahmoudashraf0011/AOLC",
     thumbnail: aolc,
     screenshots: [aolc1, aolc2, aolc3],
-    videoDemo: "https://drive.google.com/file/d/1MagnGwbBo_ktx5cXaDjsunI1G513OhcN/preview",
-    hasVideo: true
+    videoDemo:
+      "https://drive.google.com/file/d/1MagnGwbBo_ktx5cXaDjsunI1G513OhcN/preview",
+    hasVideo: true,
   },
   {
-    id: 7,
+    id: 16,
     title: "Smart Finance",
-    description: "Smart Finance is a digital financial management platform that helps businesses track expenses, manage bookkeeping, and gain real-time financial insights. It automates data capture, simplifies reporting, and improves decision-making through clear dashboards and secure workflows, enabling teams to control finances efficiently and confidently at every stage of their operations daily.",
-    tags: ["React", "TypeScript","Recharts.js","Tailwind CSS"],
+    description:
+      "Smart Finance is a digital financial management platform that helps businesses track expenses, manage bookkeeping, and gain real-time financial insights. It automates data capture, simplifies reporting, and improves decision-making through clear dashboards and secure workflows, enabling teams to control finances efficiently and confidently at every stage of their operations daily.",
+    tags: ["React", "TypeScript", "Recharts.js", "Tailwind CSS"],
     liveUrl: "https://smart-finance.aiawareworld.me/",
     githubUrl: "https://github.com/mahmoudashraf0011/smart_finance",
     thumbnail: smart,
     screenshots: [smart1, smart2, smart3],
-    videoDemo: "https://drive.google.com/file/d/1k1oek9tMp6YnwveGS2XlckX3Fqxf4OXj/preview",
-    hasVideo: true
+    videoDemo:
+      "https://drive.google.com/file/d/1k1oek9tMp6YnwveGS2XlckX3Fqxf4OXj/preview",
+    hasVideo: true,
   },
   {
-    id: 8,
+    id: 17,
     title: "Calta CMS",
-    description: "A comprehensive content management system for Calta Group, enabling efficient management of digital content, user roles, and publishing workflows with an intuitive interface. Features drag-and-drop page builder and SEO optimization tools.",
+    description:
+      "A comprehensive content management system for Calta Group, enabling efficient management of digital content, user roles, and publishing workflows with an intuitive interface. Features drag-and-drop page builder and SEO optimization tools.",
     tags: ["React", "TypeScript", "Redux", "Tailwind CSS"],
     liveUrl: "https://caltacms.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/calta-content-craft",
     thumbnail: caltacms,
     screenshots: [caltaCms1, caltaCms2, caltaCms3],
-    videoDemo: "https://drive.google.com/file/d/1e7zEIBonyXV1f5zTNG-2tvOzFGaTKI_8/preview",
-    hasVideo: true
-  
+    videoDemo:
+      "https://drive.google.com/file/d/1e7zEIBonyXV1f5zTNG-2tvOzFGaTKI_8/preview",
+    hasVideo: true,
   },
   {
-    id: 9,
+    id: 18,
     title: "Pope Shonda III",
-    description: "The Pope Shenouda III – Heritage & Archive Platform is a digital archive designed to preserve and present his sermons, books, articles, audio recordings, and photos. It provides structured access to a vast collection of spiritual and historical materials, helping users explore his legacy through organized categories, filters, and intuitive navigation.",
-    tags: ["React","Redux", "Material-UI","Css3", "Sass","Bootstrap"],
+    description:
+      "The Pope Shenouda III – Heritage & Archive Platform is a digital archive designed to preserve and present his sermons, books, articles, audio recordings, and photos. It provides structured access to a vast collection of spiritual and historical materials, helping users explore his legacy through organized categories, filters, and intuitive navigation.",
+    tags: ["React", "Redux", "Material-UI", "Css3", "Sass", "Bootstrap"],
     liveUrl: "https://www.popeshenouda.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/papashenoda",
     thumbnail: pop,
-    screenshots: [pop1, pop2, pop3]
+    screenshots: [pop1, pop2, pop3],
   },
   {
-    id: 10,
+    id: 19,
     title: "Calta Group",
-    description: "Calta Group is a luxury real estate development brand specializing in premium residential properties across South Florida. The platform highlights refined architecture, meticulous construction, and elevated living experiences, helping users explore high-end units with clarity and confidence. It delivers a premium digital journey that reflects the sophistication and quality of Calta Group’s work.",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap","CSS3","Sass"],
+    description:
+      "Calta Group is a luxury real estate development brand specializing in premium residential properties across South Florida. The platform highlights refined architecture, meticulous construction, and elevated living experiences, helping users explore high-end units with clarity and confidence. It delivers a premium digital journey that reflects the sophistication and quality of Calta Group’s work.",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "CSS3", "Sass"],
     liveUrl: "https://www.thecaltagroup.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/Calta",
     thumbnail: calta,
-    screenshots: [calta1, calta2, calta3]
+    screenshots: [calta1, calta2, calta3],
   },
   {
-    id: 11,
+    id: 20,
     title: "Sant Micheal",
-    description: "St. Michael's dashboard is for managing the delivery of homemade food products to those in need through families.",
-    tags: ["React", "TypeScript", "Tailwind CSS","Redux"],
+    description:
+      "St. Michael's dashboard is for managing the delivery of homemade food products to those in need through families.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Redux"],
     liveUrl: "https://stmichealcms.msol.work/dashboard",
     githubUrl: "https://github.com/mahmoudashraf0011/ST.Micheal",
     thumbnail: sant,
     screenshots: [sant1, sant2, sant3],
-    videoDemo: "https://drive.google.com/file/d/1AcTRrVodz8SuD2tdWO128ZCaSgQcthRD/preview",
-    hasVideo: true
+    videoDemo:
+      "https://drive.google.com/file/d/1AcTRrVodz8SuD2tdWO128ZCaSgQcthRD/preview",
+    hasVideo: true,
   },
   {
-    id: 12,
+    id: 21,
     title: "ShortListed",
-    description: "Recruitment platform connecting employers with qualified candidates through smart matching, advanced filtering, and seamless communication tools. Features AI-powered candidate recommendations.",
-    tags: ["React", "Context API", "Bootstrap","Sass","CSS3",],
+    description:
+      "Recruitment platform connecting employers with qualified candidates through smart matching, advanced filtering, and seamless communication tools. Features AI-powered candidate recommendations.",
+    tags: ["React", "Context API", "Bootstrap", "Sass", "CSS3"],
     liveUrl: "https://shopshortlisted.com/",
     githubUrl: "https://github.com/mahmoudashraf0011/Shortlisted",
     thumbnail: short,
-    screenshots: [short1, short2, short3]
+    screenshots: [short1, short2, short3],
   },
   {
-    id: 13,
+    id: 22,
     title: "Ai engineer portfolio",
-    description: "Professional portfolio website for an AI engineer showcasing projects, publications, and technical expertise with modern design elements. Includes interactive demos of ML models.",
+    description:
+      "Professional portfolio website for an AI engineer showcasing projects, publications, and technical expertise with modern design elements. Includes interactive demos of ML models.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://megamind22.github.io/Portfolio/",
     githubUrl: "https://github.com/mahmoudashraf0011/mohamed-shaker-ai-craft",
     thumbnail: shaker,
-    screenshots: [shaker1]
+    screenshots: [shaker1],
   },
   {
-    id: 14,
+    id: 23,
     title: "CEO portfolio",
-    description: "Executive portfolio website for a CEO highlighting leadership experience, company achievements, and strategic vision. Features company growth timeline and press mentions.",
+    description:
+      "Executive portfolio website for a CEO highlighting leadership experience, company achievements, and strategic vision. Features company growth timeline and press mentions.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://tamer.msol.work/",
     githubUrl: "https://github.com/mahmoudashraf0011/tamer-ishak-showcase",
     thumbnail: tamer,
-    screenshots: [tamer1]
+    screenshots: [tamer1],
   },
   {
-    id: 15,
+    id: 24,
     title: "scrate",
-    description: "Creative agency portfolio showcasing design work, brand identity projects, and digital campaigns with immersive visual experiences. Features project case studies and team profiles.",
+    description:
+      "Creative agency portfolio showcasing design work, brand identity projects, and digital campaigns with immersive visual experiences. Features project case studies and team profiles.",
     tags: ["HTML5", "CSS3", "JavaScript", "React"],
     liveUrl: "https://mahmoudashraf0011.github.io/Scrate/",
     githubUrl: "https://github.com/mahmoudashraf0011/Scrate",
     thumbnail: scrate,
-    screenshots: [scrate1, scrate2, scrate3]
+    screenshots: [scrate1, scrate2, scrate3],
   },
   {
-    id: 16,
+    id: 25,
     title: "megacart",
-    description: "A visually polished e-commerce template showcasing static product listings, thoughtfully crafted UI components, and elegant design patterns built with modern frontend best practices.",
+    description:
+      "A visually polished e-commerce template showcasing static product listings, thoughtfully crafted UI components, and elegant design patterns built with modern frontend best practices.",
     tags: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "https://mahmoudashraf0011.github.io/MegaCart-Template/",
     githubUrl: "https://github.com/mahmoudashraf0011/MegaCart-Template",
     thumbnail: mega,
-    screenshots: [mega1, mega2, mega3]
+    screenshots: [mega1, mega2, mega3],
   },
   {
-    id: 17,
+    id: 26,
     title: "Rocker",
-    description: "A modern furniture website template focused purely on UI/UX design and layout presentation.",
+    description:
+      "A modern furniture website template focused purely on UI/UX design and layout presentation.",
     tags: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "https://mahmoudashraf0011.github.io/Rocker-Template/",
-    githubUrl: "https://github.com/mahmoudashraf0011/Rocker-Template?tab=readme-ov-file",
+    githubUrl:
+      "https://github.com/mahmoudashraf0011/Rocker-Template?tab=readme-ov-file",
     thumbnail: rocker,
-    screenshots: [rocker1, rocker2, rocker3]
+    screenshots: [rocker1, rocker2, rocker3],
   },
   {
-    id: 18,
+    id: 27,
     title: "RWD",
-    description: "Responsive web design showcase demonstrating mobile-first approach and cross-device compatibility with modern CSS techniques. Includes interactive breakpoint viewer.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "CSS Grid", "Flexbox"],
+    description:
+      "Responsive web design showcase demonstrating mobile-first approach and cross-device compatibility with modern CSS techniques. Includes interactive breakpoint viewer.",
+    tags: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "CSS Grid",
+      "Flexbox",
+    ],
     liveUrl: "https://mahmoudashraf0011.github.io/RWD/",
     githubUrl: "https://github.com/mahmoudashraf0011/RWD",
     thumbnail: rwd,
-    screenshots: [rwd1, rwd2, rwd3]
+    screenshots: [rwd1, rwd2, rwd3],
   },
   {
-    id: 19,
+    id: 28,
     title: "Pro",
-    description: "Pro is a fully functional e-commerce website featuring dynamic product listings, cart management, and structured state handling within a responsive and scalable architecture.",
+    description:
+      "Pro is a fully functional e-commerce website featuring dynamic product listings, cart management, and structured state handling within a responsive and scalable architecture.",
     tags: ["React", "CSS3", "Bootstrap", "Redux"],
     liveUrl: "https://mahmoudashraf0011.github.io/Pro-Template/",
     githubUrl: "https://github.com/mahmoudashraf0011/Pro-Template",
     thumbnail: pro,
-    screenshots: [pro1, pro2, pro3]
-  }
+    screenshots: [pro1, pro2, pro3],
+  },
 ];
 
 const featuredProjects = projects.slice(0, 2);
 const carouselProjects = projects.slice(2);
 
 // Description Modal Component
-const DescriptionModal = ({ 
-  project, 
-  onClose 
-}: { 
-  project: Project; 
+const DescriptionModal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
   onClose: () => void;
 }) => {
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') onClose();
-  }, [onClose]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    },
+    [onClose],
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
   return (
@@ -370,7 +578,9 @@ const DescriptionModal = ({
               <FileText size={18} className="text-accent" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+              <h3 className="text-lg font-semibold text-white">
+                {project.title}
+              </h3>
               <p className="text-xs text-white/50">Project Details</p>
             </div>
           </div>
@@ -406,25 +616,28 @@ const DescriptionModal = ({
 };
 
 // Video Modal Component
-const VideoModal = ({ 
-  project, 
-  onClose 
-}: { 
-  project: Project; 
+const VideoModal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
   onClose: () => void;
 }) => {
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') onClose();
-  }, [onClose]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    },
+    [onClose],
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
   // Extract Google Drive file ID and create embed URL
   const getEmbedUrl = (url: string) => {
-    if (url.includes('drive.google.com')) {
+    if (url.includes("drive.google.com")) {
       // Already in preview format
       return url;
     }
@@ -455,11 +668,13 @@ const VideoModal = ({
               <Video size={18} className="text-accent" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+              <h3 className="text-lg font-semibold text-white">
+                {project.title}
+              </h3>
               <p className="text-xs text-white/50">Project Demo Video</p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-2">
             <div className="w-px h-6 bg-white/10 mx-1" />
             <button
@@ -499,19 +714,19 @@ const VideoModal = ({
 };
 
 // Enhanced Screenshot Modal Component
-const ScreenshotModal = ({ 
-  project, 
-  onClose 
-}: { 
-  project: Project; 
+const ScreenshotModal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
   onClose: () => void;
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'center',
-    skipSnaps: false
+    align: "center",
+    skipSnaps: false,
   });
-  
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -538,17 +753,20 @@ const ScreenshotModal = ({
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') scrollPrev();
-    if (e.key === 'ArrowRight') scrollNext();
-    if (e.key === 'Escape') onClose();
-    if (e.key === 'z' || e.key === 'Z') setIsZoomed(!isZoomed);
-    if (e.key === 't' || e.key === 'T') setShowThumbnails(!showThumbnails);
-  }, [scrollPrev, scrollNext, onClose, isZoomed, showThumbnails]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") scrollPrev();
+      if (e.key === "ArrowRight") scrollNext();
+      if (e.key === "Escape") onClose();
+      if (e.key === "z" || e.key === "Z") setIsZoomed(!isZoomed);
+      if (e.key === "t" || e.key === "T") setShowThumbnails(!showThumbnails);
+    },
+    [scrollPrev, scrollNext, onClose, isZoomed, showThumbnails],
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
   const downloadCurrentImage = async () => {
@@ -556,7 +774,7 @@ const ScreenshotModal = ({
     const response = await fetch(imageUrl);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = `${project.title}-screenshot-${selectedIndex + 1}.png`;
     document.body.appendChild(link);
@@ -589,15 +807,19 @@ const ScreenshotModal = ({
               <ImageIcon size={18} className="text-accent" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+              <h3 className="text-lg font-semibold text-white">
+                {project.title}
+              </h3>
               <p className="text-xs text-white/50 flex items-center gap-2">
                 <span>{project.screenshots.length} screenshots</span>
                 <span className="w-1 h-1 rounded-full bg-white/20" />
-                <span>{selectedIndex + 1} / {project.screenshots.length}</span>
+                <span>
+                  {selectedIndex + 1} / {project.screenshots.length}
+                </span>
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowThumbnails(!showThumbnails)}
@@ -636,24 +858,27 @@ const ScreenshotModal = ({
           <div ref={emblaRef} className="overflow-hidden rounded-xl h-full">
             <div className="flex h-full">
               {project.screenshots.map((screenshot, idx) => (
-                <div key={idx} className="min-w-0 shrink-0 grow-0 basis-full h-full">
+                <div
+                  key={idx}
+                  className="min-w-0 shrink-0 grow-0 basis-full h-full"
+                >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <motion.img
                       src={screenshot}
                       alt={`${project.title} screenshot ${idx + 1}`}
                       className={`rounded-lg transition-all duration-300 ${
-                        isZoomed 
-                          ? 'w-full h-full object-contain cursor-zoom-out' 
-                          : 'max-w-full max-h-full w-auto h-auto object-contain cursor-zoom-in'
+                        isZoomed
+                          ? "w-full h-full object-contain cursor-zoom-out"
+                          : "max-w-full max-h-full w-auto h-auto object-contain cursor-zoom-in"
                       }`}
                       onClick={() => setIsZoomed(!isZoomed)}
                       whileHover={{ scale: isZoomed ? 1 : 1.02 }}
                       transition={{ duration: 0.2 }}
                       style={{
-                        boxShadow: '0 10px 30px -10px rgba(0,0,0,0.5)'
+                        boxShadow: "0 10px 30px -10px rgba(0,0,0,0.5)",
                       }}
                     />
-                    
+
                     {/* Image counter with glass effect */}
                     <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md text-white/90 text-xs px-3 py-1.5 rounded-full border border-white/10">
                       {idx + 1} / {project.screenshots.length}
@@ -698,7 +923,7 @@ const ScreenshotModal = ({
         {/* Enhanced Thumbnails Strip */}
         <AnimatePresence>
           {showThumbnails && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -710,9 +935,9 @@ const ScreenshotModal = ({
                     key={idx}
                     onClick={() => emblaApi?.scrollTo(idx)}
                     className={`relative rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 group ${
-                      idx === selectedIndex 
-                        ? 'ring-2 ring-accent ring-offset-2 ring-offset-gray-900 scale-110' 
-                        : 'opacity-50 hover:opacity-100 hover:scale-105'
+                      idx === selectedIndex
+                        ? "ring-2 ring-accent ring-offset-2 ring-offset-gray-900 scale-110"
+                        : "opacity-50 hover:opacity-100 hover:scale-105"
                     }`}
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -722,10 +947,10 @@ const ScreenshotModal = ({
                       alt={`Thumbnail ${idx + 1}`}
                       className="w-20 h-14 object-cover"
                     />
-                    
+
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300" />
-                    
+
                     {/* Index number */}
                     <div className="absolute bottom-1 right-1 bg-black/70 backdrop-blur-sm text-white/90 text-[10px] px-1.5 py-0.5 rounded">
                       {idx + 1}
@@ -766,7 +991,7 @@ const ProjectCard = ({
   index: number;
 }) => {
   const [showAllTags, setShowAllTags] = useState(false);
-  
+
   const displayedTags = showAllTags ? project.tags : project.tags.slice(0, 4);
   const hiddenTagsCount = project.tags.length - 4;
 
@@ -779,7 +1004,7 @@ const ProjectCard = ({
       className="glass-card group relative overflow-hidden h-full flex flex-col hover:shadow-2xl transition-all duration-500"
     >
       {/* Screenshot Preview */}
-      <div 
+      <div
         className="relative h-48 flex-shrink-0 cursor-pointer overflow-hidden bg-secondary/60"
         onClick={onScreenshotsClick}
       >
@@ -789,14 +1014,15 @@ const ProjectCard = ({
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Badges container */}
         <div className="absolute top-3 right-3 flex gap-2">
           {/* Screenshot count badge */}
           <div className="bg-black/60 backdrop-blur-sm text-white/90 text-xs px-2 py-1 rounded-full border border-white/10">
-            {project.screenshots.length} {project.screenshots.length === 1 ? 'photo' : 'photos'}
+            {project.screenshots.length}{" "}
+            {project.screenshots.length === 1 ? "photo" : "photos"}
           </div>
-          
+
           {/* Video badge if available */}
           {project.hasVideo && (
             <div className="bg-accent/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full border border-accent/30 flex items-center gap-1">
@@ -804,7 +1030,7 @@ const ProjectCard = ({
             </div>
           )}
         </div>
-        
+
         {/* Overlay buttons */}
         <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <motion.div
@@ -823,7 +1049,7 @@ const ProjectCard = ({
               <ImageIcon size={18} />
             </button>
           </motion.div>
-          
+
           {project.hasVideo && (
             <motion.div
               initial={{ scale: 0.8 }}
@@ -857,10 +1083,13 @@ const ProjectCard = ({
             className="shrink-0 p-1.5 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group/desc"
             title="View full description"
           >
-            <FileText size={16} className="text-muted-foreground group-hover/desc:text-accent transition-colors" />
+            <FileText
+              size={16}
+              className="text-muted-foreground group-hover/desc:text-accent transition-colors"
+            />
           </button>
         </div>
-        
+
         {/* Description preview */}
         <div className="relative">
           <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">
@@ -873,13 +1102,13 @@ const ProjectCard = ({
             Read full description <Maximize size={12} />
           </button>
         </div>
-        
+
         {/* Tags with "See More" */}
         <div className="mt-4">
           <div className="flex flex-wrap gap-2">
             {displayedTags.map((tag) => (
-              <span 
-                key={tag} 
+              <span
+                key={tag}
                 className="rounded-lg bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground"
               >
                 {tag}
@@ -943,17 +1172,21 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const [screenshotProject, setScreenshotProject] = useState<Project | null>(null);
+  const [screenshotProject, setScreenshotProject] = useState<Project | null>(
+    null,
+  );
   const [videoProject, setVideoProject] = useState<Project | null>(null);
-  const [descriptionProject, setDescriptionProject] = useState<Project | null>(null);
+  const [descriptionProject, setDescriptionProject] = useState<Project | null>(
+    null,
+  );
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
     slidesToScroll: 1,
     breakpoints: {
-      '(min-width: 640px)': { slidesToScroll: 1 },
-      '(min-width: 1024px)': { slidesToScroll: 1 }
-    }
+      "(min-width: 640px)": { slidesToScroll: 1 },
+      "(min-width: 1024px)": { slidesToScroll: 1 },
+    },
   });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -1021,7 +1254,9 @@ const Projects = () => {
         transition={{ delay: 0.2 }}
         className="mt-16"
       >
-        <h3 className="mb-8 font-display text-lg font-semibold text-muted-foreground">More Projects ({carouselProjects.length})</h3>
+        <h3 className="mb-8 font-display text-lg font-semibold text-muted-foreground">
+          More Projects ({carouselProjects.length})
+        </h3>
 
         <div className="relative">
           <button

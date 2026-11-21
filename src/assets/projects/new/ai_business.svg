@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Hexagon Border Gradient -->
+    <linearGradient id="hexBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <!-- Hexagon Background Gradient -->
+    <radialGradient id="hexBgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+
+    <!-- Central Core Energy Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#60A5FA" />
+      <stop offset="70%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Sphere 3D Gradient -->
+    <radialGradient id="whiteSphereGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </radialGradient>
+
+    <!-- Glow Filter for Hexagon and Nodes -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur1" />
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="sphereGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="coreIntenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Outer Glow -->
+  <polygon
+    points="100,20 172,61 172,143 100,184 28,143 28,61"
+    fill="none"
+    stroke="url(#hexBorderGrad)"
+    stroke-width="12"
+    stroke-linejoin="round"
+    opacity="0.35"
+    filter="url(#neonGlow)"
+  />
+
+  <!-- Hexagon Body Background -->
+  <polygon
+    points="100,22 170,62 170,142 100,182 30,142 30,62"
+    fill="url(#hexBgGrad)"
+    stroke="url(#hexBorderGrad)"
+    stroke-width="7"
+    stroke-linejoin="round"
+  />
+
+  <!-- Subtle Inner Triangle Shield / Energy Field -->
+  <polygon
+    points="100,64 140,140 60,140"
+    fill="rgba(99, 102, 241, 0.16)"
+    stroke="none"
+  />
+
+  <!-- Connecting Structure Network Bars (Triangle Legs) -->
+  <g stroke="#94A3B8" stroke-width="5.5" stroke-linecap="round">
+    <line x1="100" y1="64" x2="60" y2="140" />
+    <line x1="100" y1="64" x2="140" y2="140" />
+    <line x1="60" y1="140" x2="140" y2="140" />
+  </g>
+
+  <!-- High-Tech Inner Glow Lines on Structure -->
+  <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <line x1="100" y1="64" x2="60" y2="140" />
+    <line x1="100" y1="64" x2="140" y2="140" />
+    <line x1="60" y1="140" x2="140" y2="140" />
+  </g>
+
+  <!-- Glowing Central Energy Core -->
+  <circle cx="100" cy="115" r="22" fill="url(#coreGlow)" opacity="0.85" filter="url(#coreIntenseGlow)" />
+  <circle cx="100" cy="115" r="7" fill="#FFFFFF" filter="url(#sphereGlow)" />
+
+  <!-- Node 1: Top Sphere -->
+  <circle
+    cx="100"
+    cy="64"
+    r="14"
+    fill="url(#whiteSphereGrad)"
+    filter="url(#sphereGlow)"
+  />
+
+  <!-- Node 2: Bottom-Left Sphere -->
+  <circle
+    cx="60"
+    cy="140"
+    r="14"
+    fill="url(#whiteSphereGrad)"
+    filter="url(#sphereGlow)"
+  />
+
+  <!-- Node 3: Bottom-Right Sphere -->
+  <circle
+    cx="140"
+    cy="140"
+    r="14"
+    fill="url(#whiteSphereGrad)"
+    filter="url(#sphereGlow)"
+  />
+</svg>
